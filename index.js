@@ -47,8 +47,11 @@ const questions =[
 // function to write data into the file
 function writeToFile(fileName, data) {
     console.log("Write["+data + "] to file["+ fileName + "]")
-    fs.writeFileSync(fileName, data);
-        console.log(" SVG logo generated");
+    fs.writeFile(fileName, data,function (err) {
+        if (err) {
+    }
+    console.log(" SVG logo generated");
+});
 }
 
 async function init() {
@@ -61,7 +64,7 @@ async function init() {
     //user input text
     var user_text = "";
     if (answers.text.length > 0 && answers.text.length < 4) {
-        user_text = answers.text;
+        user_text = answers.user_text;
     }else {
         console.log("Invalid user iput text");
     return;
@@ -104,7 +107,6 @@ async function init() {
     svgString = svg.render();
 
     //print log
-    console.log("Dispaly shape:\n\n" + svgString);
 
     console.log("SVG logo generated");
     console.log("writing shape to file");
