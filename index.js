@@ -33,7 +33,7 @@ const questions =[
     },
     {
         type:"list",
-        name:"shape",
+        name:"shape-type",
         message:"Select a shape of your choice:",
         choices:['Square','Circle','Triangle'],
     },
@@ -56,29 +56,30 @@ async function init() {
     var svgString = "";
     var svg_file= "logo.svg";
 
-    const answer = await inquirer.prompt(questions);
+    const answers = await inquirer.prompt(questions);
 
     //user input text
     var user_text = "";
-    if (answer.text.length > 0 && answer.text.length < 4) {
-        user_text = answer.text;
+    if (answers.text.length > 0 && answers.text.length < 4) {
+        user_text = answers.text;
     }else {
         console.log("Invalid user iput text");
-        return;
+    return;
     }
 
+    user_text = answers["text"];
     console.log ("User text:[" + user_text + "]");
 
     // for font color
-    user_font_color = answer["text-color"];
+    user_font_color = answers["text-color"];
     console.log("User font color: [" + user_font_color + "]");
 
     //for shape color
-    user_shape_color = answer.shape;
+    user_shape_color = answers["shape-color"]
     console.log("User shape color: [" + user_shape_color + "]");
 
     //for shape type
-    user_shape_type = answer["pixel-image"];
+    user_shape_type = answers["shape-type"];
     console.log("User shape type: [" + user_shape_type + "]");
 
     //usershape
