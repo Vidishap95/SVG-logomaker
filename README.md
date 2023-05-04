@@ -34,4 +34,4 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 Here is the link for the demo video.
 
-https://drive.google.com/file/d/1I-2ZhzEGa2AiP5k-bLGSlfHjw6QVFjMP/view
+https://drive.google.com/file/d/1BvBP8cr8Q74gsypouIPn6fe4YPQfthOh/view
