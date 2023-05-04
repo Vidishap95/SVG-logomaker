@@ -15,7 +15,7 @@ class Svg {
         this.textElement = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
     }
     setShapeElement(shape) {
-        this.shapeElement = shape
+        this.shapeElement = shape.render()
     }
 }
 
@@ -70,7 +70,7 @@ async function init() {
         switch (answers.shapeType) {
             case "Square":
                 user_shape = new Square(answers.shapeColor);
-                console.log('square user_shape is', user_shape);
+                // console.log('square user_shape is', user_shape);
                 break;
             case "Circle":
                 user_shape = new Circle(answers.shapeColor);
